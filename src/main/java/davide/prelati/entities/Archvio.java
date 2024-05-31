@@ -37,7 +37,7 @@ public class Archvio {
     //esercizio 4
 
     public List<Catalogo> searchForAnnoDiPubblicazione(int annoDiPubblicazione) throws AnnoNonValido {
-        if (annoDiPubblicazione <= 1994) throw new AnnoNonValido(annoDiPubblicazione);
+        if (annoDiPubblicazione <= 1983) throw new AnnoNonValido(annoDiPubblicazione);
         return catalogos.stream()
                 .filter(elemento -> elemento.getAnnoDiPubblicazione() == annoDiPubblicazione).collect(Collectors.toList());
     }
