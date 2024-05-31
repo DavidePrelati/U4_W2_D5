@@ -1,6 +1,10 @@
 package davide.prelati.entities;
 
 
+import davide.prelati.exceptions.AnnoNonValido;
+import davide.prelati.exceptions.PagineNonValide;
+import davide.prelati.exceptions.StringaNonValida;
+
 public abstract class Catalogo {
 
     private String CodiceIBSN;
@@ -28,7 +32,9 @@ public abstract class Catalogo {
         return titolo;
     }
 
-    public void setTitolo(String titolo) {
+    public void setTitolo(String titolo) throws StringaNonValida {
+
+        if (titolo.length() <= 2) throw new StringaNonValida(titolo);
         this.titolo = titolo;
     }
 
@@ -37,6 +43,7 @@ public abstract class Catalogo {
     }
 
     public void setAnnoDiPubblicazione(int annoDiPubblicazione) {
+        if (annoDiPubblicazione < 1) throw new AnnoNonValido(annoDiPubblicazione);
         this.annoDiPubblicazione = annoDiPubblicazione;
     }
 
@@ -45,6 +52,7 @@ public abstract class Catalogo {
     }
 
     public void setNumeroPagine(int numeroPagine) {
+        if (numeroPagine <= 1) throw new PagineNonValide(numeroPagine);
         this.numeroPagine = numeroPagine;
     }
 

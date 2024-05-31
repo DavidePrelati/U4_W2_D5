@@ -1,5 +1,7 @@
 package davide.prelati.entities;
 
+import davide.prelati.exceptions.StringaNonValida;
+
 public class Libro extends Catalogo {
 
     private String autore;
@@ -16,7 +18,8 @@ public class Libro extends Catalogo {
         return autore;
     }
 
-    public void setAutore(String autore) {
+    public void setAutore(String autore) throws StringaNonValida {
+        if (autore.length() <= 3) throw new StringaNonValida(autore);
         this.autore = autore;
     }
 
@@ -24,7 +27,8 @@ public class Libro extends Catalogo {
         return genere;
     }
 
-    public void setGenere(String genere) {
+    public void setGenere(String genere) throws StringaNonValida {
+        if (genere.length() <= 2) throw new StringaNonValida(genere);
         this.genere = genere;
     }
 

@@ -13,10 +13,13 @@ public class Archvio {
 
     //esercizio 1
     public void addItem(Catalogo elemento) {
-        if (elemento == null) {
-            throw new IllegalArgumentException("L'elemento non può essere nullo");
-        }
         catalogos.add(elemento);
     }
 
+    //esercizio 2
+    public void removeItem(String codiceIBSN) {
+        catalogos.removeIf(catalogo -> catalogo.getCodiceIBSN().equals(codiceIBSN));
+    }
+
+    
 }
