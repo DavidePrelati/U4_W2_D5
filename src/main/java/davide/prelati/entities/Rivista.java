@@ -15,4 +15,15 @@ public class Rivista extends Catalogo {
     public void setPeriodicita(Periodicita periodicita) {
         this.periodicita = periodicita;
     }
+
+    @Override
+    public String toString() {
+        return "Magazine{" +
+                "ibsn='" + getCodiceIBSN() + '\'' +
+                ", title='" + getTitolo() + '\'' +
+                ", publicationYear=" + getAnnoDiPubblicazione() +
+                ", numberOfPages=" + getNumeroPagine() +
+                ", periodicity=" + periodicita +
+                '}';
+    }
 }

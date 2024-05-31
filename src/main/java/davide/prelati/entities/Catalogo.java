@@ -48,4 +48,13 @@ public abstract class Catalogo {
         this.numeroPagine = numeroPagine;
     }
 
+    @Override
+    public String toString() {
+        return "Catalogo{" +
+                "CodiceIBSN='" + CodiceIBSN + '\'' +
+                ", titolo='" + titolo + '\'' +
+                ", annoDiPubblicazione=" + annoDiPubblicazione +
+                ", numeroPagine=" + numeroPagine +
+                '}';
+    }
 }

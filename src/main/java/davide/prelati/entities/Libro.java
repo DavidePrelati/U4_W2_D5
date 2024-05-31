@@ -11,7 +11,7 @@ public class Libro extends Catalogo {
         this.genere = genere;
     }
 
-  
+
     public String getAutore() {
         return autore;
     }
@@ -26,5 +26,17 @@ public class Libro extends Catalogo {
 
     public void setGenere(String genere) {
         this.genere = genere;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "ibsn='" + getCodiceIBSN() + '\'' +
+                ", title='" + getTitolo() + '\'' +
+                ", publicationYear=" + getAnnoDiPubblicazione() +
+                ", numberOfPages=" + getNumeroPagine() +
+                ", author='" + autore + '\'' +
+                ", genre='" + genere + '\'' +
+                '}';
     }
 }
