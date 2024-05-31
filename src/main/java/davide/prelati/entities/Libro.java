@@ -35,12 +35,12 @@ public class Libro extends Catalogo {
     @Override
     public String toString() {
         return "Book{" +
-                "ibsn='" + getCodiceIBSN() + '\'' +
-                ", title='" + getTitolo() + '\'' +
-                ", publicationYear=" + getAnnoDiPubblicazione() +
-                ", numberOfPages=" + getNumeroPagine() +
-                ", author='" + autore + '\'' +
-                ", genre='" + genere + '\'' +
+                "Codice='" + getCodiceIBSN() + '\'' +
+                ", Titolo='" + getTitolo() + '\'' +
+                ", anno di pubblicazione=" + getAnnoDiPubblicazione() +
+                ", numero di pagine=" + getNumeroPagine() +
+                ", autore='" + autore + '\'' +
+                ", genere='" + genere + '\'' +
                 '}';
     }
 }

@@ -1,5 +1,6 @@
 package davide.prelati.entities;
 
+import davide.prelati.exceptions.AnnoNonValido;
 import davide.prelati.exceptions.StringaNullaPerCodiceIBSN;
 import davide.prelati.exceptions.StringaVuota;
 
@@ -35,7 +36,8 @@ public class Archvio {
 
     //esercizio 4
 
-    public List<Catalogo> searchForAnnoDiPubblicazione(int annoDiPubblicazione) {
+    public List<Catalogo> searchForAnnoDiPubblicazione(int annoDiPubblicazione) throws AnnoNonValido {
+        if (annoDiPubblicazione <= 1994) throw new AnnoNonValido(annoDiPubblicazione);
         return catalogos.stream()
                 .filter(elemento -> elemento.getAnnoDiPubblicazione() == annoDiPubblicazione).collect(Collectors.toList());
     }

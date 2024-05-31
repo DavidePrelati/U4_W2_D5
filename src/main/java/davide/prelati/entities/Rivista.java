@@ -18,12 +18,12 @@ public class Rivista extends Catalogo {
 
     @Override
     public String toString() {
-        return "Magazine{" +
-                "ibsn='" + getCodiceIBSN() + '\'' +
-                ", title='" + getTitolo() + '\'' +
-                ", publicationYear=" + getAnnoDiPubblicazione() +
-                ", numberOfPages=" + getNumeroPagine() +
-                ", periodicity=" + periodicita +
+        return "Rivista{" +
+                "Codice='" + getCodiceIBSN() + '\'' +
+                ", Titolo='" + getTitolo() + '\'' +
+                ", anno di pubblicazione=" + getAnnoDiPubblicazione() +
+                ", numero di pagine=" + getNumeroPagine() +
+                ", periodicità=" + periodicita +
                 '}';
     }
 }

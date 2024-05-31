@@ -26,5 +26,16 @@ public class Application {
         archivio.addItem(rivista_2);
         archivio.addItem(rivista_3);
 
+
+        System.out.println("\nRicerca per codice IBSN LLPPYY9065");
+        System.out.println(archivio.searchForCodiceISBN("LLPPYY9065"));
+
+        System.out.println("\nRicerca per codice IBSN LLPPYY4038");
+        System.out.println(archivio.searchForCodiceISBN("LLPPYY4038"));
+
+        System.out.println("\nRicerca per anno 1995");
+        System.out.println(archivio.searchForAnnoDiPubblicazione(1995));
+
+
     }
 }
