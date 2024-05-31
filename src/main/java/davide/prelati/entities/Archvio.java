@@ -5,6 +5,7 @@ import davide.prelati.exceptions.StringaVuota;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Archvio {
 
@@ -33,6 +34,15 @@ public class Archvio {
     }
 
     //esercizio 4
-    
 
+    public List<Catalogo> searchForAnnoDiPubblicazione(int annoDiPubblicazione) {
+        return catalogos.stream()
+                .filter(elemento -> elemento.getAnnoDiPubblicazione() == annoDiPubblicazione).collect(Collectors.toList());
+    }
+
+    //esercizio 5
+    public List<Libro> searchForAutore(String autore) {
+        return catalogos.stream().filter(elemento -> elemento instanceof Libro).map(elemento -> (Libro) elemento)
+                .filter(libro -> libro.getAutore().equalsIgnoreCase(autore)).collect(Collectors.toList());
+    }
 }
