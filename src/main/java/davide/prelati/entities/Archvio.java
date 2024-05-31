@@ -47,4 +47,10 @@ public class Archvio {
         return catalogos.stream().filter(elemento -> elemento instanceof Libro).map(elemento -> (Libro) elemento)
                 .filter(libro -> libro.getAutore().equalsIgnoreCase(autore)).collect(Collectors.toList());
     }
+
+    public void printItems() {
+        for (Object elemento : catalogos) {
+            System.out.println(elemento);
+        }
+    }
 }

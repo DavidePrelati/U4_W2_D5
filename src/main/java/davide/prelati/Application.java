@@ -4,6 +4,7 @@ import davide.prelati.entities.Archvio;
 import davide.prelati.entities.Libro;
 import davide.prelati.entities.Periodicita;
 import davide.prelati.entities.Rivista;
+import davide.prelati.exceptions.StringaNullaPerCodiceIBSN;
 import davide.prelati.exceptions.StringaVuota;
 
 public class Application {
@@ -26,7 +27,7 @@ public class Application {
         archivio.addItem(rivista_2);
         archivio.addItem(rivista_3);
 
-
+        archivio.printItems();
         System.out.println("\nRicerca per codice IBSN LLPPYY9065");
         System.out.println(archivio.searchForCodiceISBN("LLPPYY9065"));
 
@@ -36,8 +37,16 @@ public class Application {
         System.out.println("\nRicerca per anno 1995");
         System.out.println(archivio.searchForAnnoDiPubblicazione(1995));
 
-        System.out.println("\nRicerca per l'autore Akira Toriyama");
+        System.out.println("\nRicerca per l'autore Akira Toriyama\n\n");
         System.out.println(archivio.searchForAutore("Akira Toriyama"));
+
+        try {
+            archivio.removeItem("TTWWPP2279");
+        } catch (StringaNullaPerCodiceIBSN e) {
+            throw new RuntimeException(e);
+        }
+
+        archivio.printItems();
 
 
     }
